@@ -31,7 +31,7 @@ end
 ###
 # yains
 #
-function yains -d "Install specific package not from the repositories but from a file"
+function yains -d "yaourt -U	Install specific package not from the repositories but from a file"
   yaourt -U $argv
 end
 ###
@@ -65,10 +65,15 @@ else
     yaourt -Sy
   end
 end
-
 ###
 # yaupg
 #
 function yaupg -d "Synchronize with repositories before upgrading packages that are out of date on the local system."
   yaourt -Syua
+end
+###
+# yaupg
+#
+function yareps -d "Search for package(s) in the repositories"
+  yaourt -Ss $argv
 end
