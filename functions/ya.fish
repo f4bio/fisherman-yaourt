@@ -1,3 +1,26 @@
+function ya -d "yaourt - aur and pacman wrapper"
+  if test (count $argv) -ge 1
+    set -l cmd $argv[1]
+    echo "found command: $cmd"
+  end
+
+  if test (count $argv) -gt 1
+    set -l cmdv $argv[2..-1]
+    echo "found args: $cmdv"
+  end
+
+  switch "$cmd"
+    case "test"
+      echo $cmdv
+    case "in"
+      yaourt -S $cmdv
+    case "upd"
+      yaourt -Sy
+    case "*"
+      echo -e 'unknown command: "$cmd" - check `\$ ya help`'
+  end
+end
+
 ###
 # yadisowned
 #
@@ -51,29 +74,4 @@ end
 #
 function yalocs -d "Search for package(s) in the local database"
   yaourt -Qs $argv
-end
-###
-# yaupd
-#
-which abs ^ /dev/null > /dev/null
-if test $status -ne 1
-  function yaupd -d "Update and refresh the local package and ABS databases against repositories"
-    yaourt -Sy; and sudo abs
-  end
-else
-  function yaupd -d "Update and refresh the local package against repositories"
-    yaourt -Sy
-  end
-end
-###
-# yaupg
-#
-function yaupg -d "Synchronize with repositories before upgrading packages that are out of date on the local system."
-  yaourt -Syua
-end
-###
-# yaupg
-#
-function yareps -d "Search for package(s) in the repositories"
-  yaourt -Ss $argv
 end
