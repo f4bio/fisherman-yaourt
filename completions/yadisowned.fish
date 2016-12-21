@@ -1,1 +1,1 @@
-complete -xc yain -d "Display list of disowned files"
+complete -xc yadisowned -d "Display list of disowned files"

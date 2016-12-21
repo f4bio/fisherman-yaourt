@@ -1,6 +1,6 @@
 ###
 # yareps
 #
-function yareps -d "Search for package(s) in the repositories"
+function yareps -d "yaourt -Ss; Search for package(s) in the repositories"
   yaourt -Ss $argv
 end

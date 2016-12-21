@@ -1,6 +1,6 @@
 ###
 # yalocs
 #
-function yalocs -d "Search for package(s) in the local database"
+function yalocs -d "yaourt -Qs; Search for package(s) in the local database"
   yaourt -Qs $argv
 end

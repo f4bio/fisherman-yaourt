@@ -1,7 +1,7 @@
 ###
 # yadisowned
 #
-function yadisowned -d "Display list of disowned files"
+function yadisowned -d "yaourt -Qlq; Display list of disowned files"
   if test -d "$TMPDIR"
     set tmp $TMPDIR
   else
