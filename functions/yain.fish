@@ -1,6 +1,3 @@
-###
-# yain
-#
-function yain -d "yaourt -S; Install specific package(s) from the repositories"
-  yaourt -S $argv
+function yain
+  __ya_in $argv
 end

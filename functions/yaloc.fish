@@ -1,6 +1,3 @@
-###
-# yaloc
-#
-function yaloc -d "yaourt -Qi; Display information about a given package in the local database"
-  yaourt -Qi $argv
+function yaloc
+  __ya_loc $argv
 end
