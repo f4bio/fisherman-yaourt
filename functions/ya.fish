@@ -47,6 +47,6 @@ function ya -d "yaourt helpers"
 			echo "v$ya_version (using: $yaourt_version)"
 			return
     case \*
-      command "yaourt" $action $params
+      command "__ya_$action" $params
 	end
 end
